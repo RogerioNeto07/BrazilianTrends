@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c10212071e.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    @import url('https://fonts.cdnfonts.com/css/quilin');
+    @font-face {
+    font-family: 'Postre';
+    src: url('/demo-postre.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    }
+    body{
+        min-height: 100vh;
+    }
+    header{
+        background-color: #FFFDF0;;
+        height: 11.1875rem;
+        filter: drop-shadow(0 0 4px rgba(0,0,0,0.2));
+    }
+    .lancamentos{
+        display: grid;
+        place-items: center;
+    }
+    .lancamentos > h2{
+        color: #CC876A;
+        font-size: 2.25rem;
+        font-weight: 400;
+        text-align: center;
+        padding: 1.875rem 0;
+    }
+    .promocao{
+        display: grid;
+        place-items: center;
+        margin-top: 17px;
+        margin-bottom: 60px;
+    }
+    .promocao > h2{
+        color: #CC876A;
+        font-size: 2.25rem;
+        font-weight: 400;
+        text-align: center;
+        padding: 1.875rem 0;
+    }
+    .break{
+        flex-basis: 100%;
+        height: 0;
+    }
+    .main-box{
+        height: 385px;
+        width: 100%;
+        top: 163px;
+;
+    }
+    .nav-display > ul{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 2.2rem;
+        color: #346D9E;
+        list-style: none;
+        padding-inline: 1rem;
+        font-size: 1.5rem;
+        gap: 26px;
+    }
+    .header-display{
+        width: 100%;
+        max-width: 1120px;
+        margin: 0 auto;
+        padding-top: 2.5rem;
+    }
+    .busca{
+        background-color: salmon;
+        color: burlywood;
+        height: 25px;
+    }
+    header{
+        display: grid;
+        place-items: center;
+        text-align: center;
+    }
+    .header-inicio{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .header-inicio > h1{
+        font-size: 2.25rem;
+        color: #BE2233;
+        font-weight: 400;
+        margin-left: 2.9375rem;
+    }
+    .produtos{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    .produtos-promocao{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 26px;
+        justify-content: center;
+        margin-bottom: 60px;
+    }
+    .produto-card{
+        width: 15.1875rem;
+        height: 24.1875rem;
+        border-radius: 5px;
+        border: 2px solid #DEDEDE;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .produto-card > .produto-lancamento{
+        background-color: #346D9E;
+        width: 5.5rem;
+        padding: 5px 15px;
+        border-radius: 5px;
+        color: #FFFDF0;
+        font-weight: 400;
+        font-size: 0.6875rem;
+        text-align: center;
+        font-family: 'Postre';
+        margin-top: -12px;
+    }
+    .produto-card > .produto {
+        height: 150px;
+        padding: 10px 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .produto > h3{
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+    .produto > div{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+    .produto-preco {
+        font-family: 'Postre';
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+    
+    }
+    .produto-pix {
+        font-family: 'Postre';
+        font-weight: 600;
+    }
+    .input-pesquisa {
+        background-color: #F4D9D2;
+        border-radius: 5px;
+        padding-inline: 1.875rem;
+        width: 31.25rem;
+        height: 2.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+    }
+    .input-pesquisa input{
+        background: transparent;
+        height: 100%;
+        width: 90%;
+        outline: none;
+        border: none;
+        color: #CC876A;
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+    .input-pesquisa input::placeholder{
+        color: #CC876A;
+        font-size: 1.5rem;
+        font-weight: 400;
+        position: absolute;
+        top: 30%;
+    }
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Quilin', sans-serif;
+        list-style: none;
+        text-decoration: none;
+    }
+
+    .imagem-produto{
+        width: 243px;
+        height: 237px;
+        top: 647px;
+        left: 136px;
+        gap: 0px;
+        border-radius: 5px 5px 0px 0px;
+        opacity: 0px;
+    }
+    .acessorios-sapatos{
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 74px;
+    }
+    .footer{
+        background-color: #2668A2;
+        min-height: 500px;
+        height: 494px;
+        width: 1280;
+        width: 100%;
+    }
+    .footer-container{
+        width: 100%;
+        max-width: 1120px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-inline: 10px ;
+    }
+    .row{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-top: 3.4375rem;
+    }
+    .col-info > h3{
+        font-size: 1.25rem;
+        font-weight: 400;
+        color: #FFFDF0;
+    }
+    .col-info > p{
+        font-weight: 500;
+        color: #CCAD6E;
+    }
+    .col-email{
+        display: flex;
+        align-items: center;
+    }
+    .col-email > input{
+        border-radius: 5px;
+        width: 344px;
+        height: 44px;
+        background-color: #F4D9D2;
+        outline: none;
+        border: none;
+        margin-right: -5px;
+        padding-left: 21px;
+        font-size: 1rem;
+    }
+    .col-email > input::placeholder{
+        font-size: 1rem;
+    }
+    .col-email > button{
+        border-radius: 5px;
+        width: 159px;
+        height: 44px;
+        background-color: #CC876A;
+        color: #FFFDF0;
+        outline: none;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-size: 1rem;
+    }
+    .col-email > i{
+        background-color: #FFFDF0;
+    }
+    .divider{
+        width: 100%;
+        margin-top: 1.5rem;
+        height: 2px;
+        border-radius: 8px;
+        background-color: #F4D9D2;
+    }
+    .col-social > ul{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    .logo{
+        width: 236;
+        height: 29px;
+        margin-bottom: 30px;
+    }
+    .col-inst, .col-pag, .col-at > h3{
+        color: #FFFDF0;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 22px;
+    }
+    .col-inst > ul > li{
+        padding-bottom: 3px;
+    }
+    .col-inst ul li a{
+        font-size: 1rem;
+        font-weight: 400;
+        color: #CCAD6E;
+    }
+    .col-at > ul > li{
+        padding-bottom: 3px;
+    }
+    .col-at ul li a{
+        font-size: 1rem;
+        font-weight: 400;
+        color: #CCAD6E;
+    }
+    .col-pag{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .col-pag > img {
+        width: 18.125rem;
+        height: 11.8125rem;
+    }
+    .logo-inferior > img{
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+    }
+    .texto-azul{
+        color: #346D9E;
+    }
+    .texto-bege{
+        color: #CC876A;
+    }
+    .fa-magnifying-glass, .fa-door-open, .fa-cart-shopping{
+        color: #CC876A;
+    }
+    .fa-arrow-right, .fa-envelope, .fa-phone{
+        color: #FFFDF0;
+    }
+    .carrinho-numero{
+        color: #CC876A;
+    }
+    .carrinho{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+</style>
+<body>
+    <header>
+        <div class="header-display">
+            <div class="header-inicio">
+                <h1>BrazilianTrends</h1>
+                <div class = "input-pesquisa">
+                    <input type="text" placeholder="o que deseja procurar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div class="conta">
+                    <div class="entrar-conta">
+                        <i class="fa-solid fa-door-open"></i>
+                        <div>
+                            <span class="texto-azul">Minha Conta</span>
+                            <span class="texto-bege">Entrar/Cadastrar</span>
+                        </div>
+                    </div>
+                    <div class="carrinho">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <p class="numero-carrinho">0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <nav>
+            <div class="nav-display">
+                <ul>
+                    <li>Casacos</li>
+                    <li>Body</li>
+                    <li>Vestidos</li>
+                    <li>Jaquetas</li>
+                    <li>Tshirts</li>
+                    <li>Shorts e Saias</li>
+                    <li>Calças</li>
+                    <li>Sapatos</li>
+                    <li>Acessórios</li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <img class="main-box" src="img\Banner.png" alt="Banner">
+    <div class="lancamentos">
+        <h2 cla>lançamentos</h2>
+        <div class="produtos">
+        <div class="produto-card">
+            <img class="imagem-produto" src="img\blusacinza.png" alt="blusa preta">
+            <div class="produto-lancamento">Lançamento</div>
+            <div class="produto">
+                <h3 class="texto-bege">Blusa Denin Tubo</h3>
+                <div>
+                    <span class="texto-azul produto-preco">R$ 49,99</span>
+                    <span class="texto-azul produto-pix">R$ 49.99 à vista com desconto pix</span>
+                </div>
+
+            </div>
+        </div>
+        <div class="produto-card">
+            <img class="imagem-produto" src="img\blusacinza.png" alt="blusa preta">
+            <div class="produto-lancamento">Lançamento</div>
+            <div class="produto">
+                <h3 class="texto-bege">Blusa Denin Tubo</h3>
+                <div>
+                    <span class="texto-azul produto-preco">R$ 49,99</span>
+                    <span class="texto-azul produto-pix">R$ 49.99 à vista com desconto pix</span>
+                </div>
+
+            </div>
+        </div>
+        <div class="produto-card">
+            <img class="imagem-produto" src="img\blusacinza.png" alt="blusa preta">
+            <div class="produto-lancamento">Lançamento</div>
+            <div class="produto">
+                <h3 class="texto-bege">Blusa Denin Tubo</h3>
+                <div>
+                    <span class="texto-azul produto-preco">R$ 49,99</span>
+                    <span class="texto-azul produto-pix">R$ 49.99 à vista com desconto pix</span>
+                </div>
+
+            </div>
+        </div>
+        <div class="produto-card">
+            <img class="imagem-produto" src="img\blusacinza.png" alt="blusa preta">
+            <div class="produto-lancamento">Lançamento</div>
+            <div class="produto">
+                <h3 class="texto-bege">Blusa Denin Tubo</h3>
+                <div>
+                    <span class="texto-azul produto-preco">R$ 49,99</span>
+                    <span class="texto-azul produto-pix">R$ 49.99 à vista com desconto pix</span>
+                </div>
+
+            </div>
+        </div>
+        <div class="break"></div>
+        <div class="produto-card">
+            <img class="imagem-produto" src="img\blusacinza.png" alt="blusa preta">
+            <div class="produto-lancamento">Lançamento</div>
+            <div class="produto">
+                <h3 class="texto-bege">Blusa Denin Tubo</h3>
+                <div>
+                    <span class="texto-azul produto-preco">R$ 49,99</span>
+                    <span class="texto-azul produto-pix">R$ 49.99 à vista com desconto pix</span>
+                </div>
+
+            </div>
+        </div>
+        <div class="produto-card">
+            <img class="imagem-produto" src="img\blusacinza.png" alt="blusa preta">
+            <div class="produto-lancamento">Lançamento</div>
+            <div class="produto">
+                <h3 class="texto-bege">Blusa Denin Tubo</h3>
+                <div>
+                    <span class="texto-azul produto-preco">R$ 49,99</span>
+                    <span class="texto-azul produto-pix">R$ 49.99 à vista com desconto pix</span>
+                </div>
+
+            </div>
+        </div>
+        <div class="produto-card">
+            <img class="imagem-produto" src="img\blusacinza.png" alt="blusa preta">
+            <div class="produto-lancamento">Lançamento</div>
+            <div class="produto">
+                <h3 class="texto-bege">Blusa Denin Tubo</h3>
+                <div>
+                    <span class="texto-azul produto-preco">R$ 49,99</span>
+                    <span class="texto-azul produto-pix">R$ 49.99 à vista com desconto pix</span>
+                </div>
+
+            </div>
+        </div>
+            <div class="produto-card">
+                <img class="imagem-produto" src="img\blusacinza.png" alt="blusa preta">
+                <div class="produto-lancamento">Lançamento</div>
+                <div class="produto">
+                    <h3 class="texto-bege">Blusa Denin Tubo</h3>
+                <div>
+                    <span class="texto-azul produto-preco">Esse acabou :/</span>
+                    <span class="texto-azul produto-pix">Avise-me quando chegar </span>
+                    <i class="fa-solid fa-arrow-right"></i> 
+                    </div>
+    
+                </div>
+            </div>       
+        </div>
+    </div>
+    <div class="acessorios-sapatos">
+        <img src="img\acessóios.png" alt="acessorios">
+        <img src="img\Sapatos.png" alt="sapatos">
+    </div>
+    <div class="promocao">
+        <h2>promoção</h2>
+        <div class="produtos-promocao">
+            <div class="produto-card">
+                <img class="imagem-produto" src="img\blusacinza.png" alt="blusa preta">
+                <div class="produto-lancamento">Promoção</div>
+                <div class="produto">
+                    <h3 class="texto-bege">Blusa Denin Tubo</h3>
+                    <div>
+                        <span class="texto-azul produto-preco">R$ 49,99</span>
+                        <span class="texto-azul produto-pix">R$ 49.99 à vista com desconto pix</span>
+                    </div>
+    
+                </div>
+            </div>
+            <div class="produto-card">
+                <img class="imagem-produto" src="img\blusacinza.png" alt="blusa preta">
+                <div class="produto-lancamento">Promoção</div>
+                <div class="produto">
+                    <h3 class="texto-bege">Blusa Denin Tubo</h3>
+                    <div>
+                        <span class="texto-azul produto-preco">R$ 49,99</span>
+                        <span class="texto-azul produto-pix">R$ 49.99 à vista com desconto pix</span>
+                    </div>
+    
+                </div>
+            </div>
+            <div class="produto-card">
+                <img class="imagem-produto" src="img\blusacinza.png" alt="blusa preta">
+                <div class="produto-lancamento">Promoção</div>
+                <div class="produto">
+                    <h3 class="texto-bege">Blusa Denin Tubo</h3>
+                    <div>
+                        <span class="texto-azul produto-preco">R$ 49,99</span>
+                        <span class="texto-azul produto-pix">R$ 49.99 à vista com desconto pix</span>
+                    </div>
+    
+                </div>
+            </div>
+            <div class="produto-card">
+                <img class="imagem-produto" src="img\blusacinza.png" alt="blusa preta">
+                <div class="produto-lancamento">Promoção</div>
+                <div class="produto">
+                    <h3 class="texto-bege">Blusa Denin Tubo</h3>
+                    <div>
+                        <span class="texto-azul produto-preco">R$ 49,99</span>
+                        <span class="texto-azul produto-pix">R$ 49.99 à vista com desconto pix</span>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="footer-container">
+            <div class="row">
+                <div class="col-info">
+                    <h3>Cadastre-se em nossa Newsletter</h3>
+                    <p>e receba novidades e promocçoes</p>
+                </div>
+                <div class="col-email">
+                    <input type="email" placeholder="digite seu email"><button>cadastre-se<i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="row">
+                <div class="col-social">
+                    <img src="img\BrazilianTrends.png" alt="" class="logo">
+                    <ul>
+                        <li><a href=""><img src="img\facebook.svg" alt=""></a></li>
+                        <li><a href=""><img src="img\instagram.svg" alt=""></a></li>
+                        <li><a href=""><img src="img\twitter.svg" alt=""></a></li>
+                        <li><a href=""><img src="img\linkedin.svg" alt=""></a></li>
+                        <li><a href=""><img src="img\pinterest.svg" alt=""></a></li>
+                    </ul>
+                </div>
+                <div class="col-inst">
+                    <h3>Institucional</h3>
+                    <ul>
+                        <li><a href="#">Sobre a Brazilian Trends </a></li>
+                        <li><a href="#">Como Comprar</a></li>
+                        <li><a href="#">Segurança</a></li>
+                        <li><a href="#">Envio</a></li>
+                        <li><a href="#">Pagamento</a></li>
+                        <li><a href="#">Troca e Devouções</a></li>
+                        <li><a href="#">Fale Conosco</a></li>
+                      </ul>
+                </div>
+                <div class="col-at">
+                    <h3>Atendimento</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-phone"></i><a href="">(81) 99999 9999</a></li>
+                        <li><i class="fa-solid fa-envelope"></i><a href="">loja@BrazilianTrends.com</a></li>
+                    </ul>
+                </div>
+                <div class="col-pag">
+                    <h3>Formas de pagamento</h3>
+                    <img src="img\metodos.png" alt="">
+                </div>
+            </div>
+            <div class="logo-inferior">
+                <img src="img\BrazilianTrends.png" alt="" class="logo">
+            </div>
+        </div>
+        </footer>
+</body>
+</html>
+
